@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('my_database.db')
+conn = sqlite3.connect('student_database.db')
 cursor = conn.cursor()
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS student_marks (

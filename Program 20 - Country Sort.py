@@ -18,11 +18,12 @@ customers_data = [
     ('Frank', 'India')
 ]
 
-try: cursor.executemany('INSERT INTO customers(customer_name, country) VALUES (?, ?)', customers_data)
-except sqlite3.IntegrityError: pass
+cursor.executemany('INSERT INTO customers(customer_name, country) VALUES (?, ?)', customers_data)
+conn.commit()
 
-[print(f"Country: {row[0]}, Total Customers: {row[1]}") for row in cursor.execute('''SELECT country, COUNT(DISTINCT customer_id) as total_customers 
+for row in cursor.execute('''SELECT country, COUNT(*) AS total_customers 
                             FROM customers 
-                            GROUP BY country''')]
+                            GROUP BY country'''):
+    print(f"Country: {row[0]}, Total Customers: {row[1]}")
 
 conn.close()
