@@ -2,10 +2,10 @@ import mysql.connector
 
 try:
     conn = mysql.connector.connect(
-        host='your_host',
-        user='your_username',
-        password='your_password',
-        database='your_database'
+        host='DhiBaid',
+        user='dhibaid',
+        password='12345678',
+        database='cs'
     )
     
     if conn.is_connected():
