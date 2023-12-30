@@ -8,13 +8,14 @@ class StudentInformation:
     def display_student_info(self, a):
         s = self.students.get(a)
         if s:
-            print(f"Student Information:\nAdmission Number: {a}\nRoll Number: {s['Roll Number']}\nName: {s['Name']}\nMarks: {s['Marks']}")
+            print(f"Student Information:\nAdmission Number: 
+                {a}\nRoll Number: {s['Roll Number']}\nName: {s['Name']}\nMarks: {s['Marks']}")
         else:
             print("Student with this admission number doesn't exist.")
 
 s = StudentInformation()
 for _ in range(int(input("Enter the number of students: "))):
-    a, r, n, m = input("Enter admission, roll, name, marks: ").split()
+    a, r, n, m = input("Enter admission, roll, name, marks: ").split(",")
     s.add_student(a, r, n, m)
-
-s.display_student_info(input("Enter admission number to search: "))
+    
+s.display_student_info(str(input("Enter admission number to search: ")))

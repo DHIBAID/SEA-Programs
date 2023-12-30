@@ -9,6 +9,7 @@ def bubble_sort(arr):
         if not swapped:
             break
 
+
 user_input = input("Enter numbers separated by space: ")
 nums = list(map(int, user_input.split()))
 bubble_sort(nums)

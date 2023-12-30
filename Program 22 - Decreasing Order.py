@@ -12,4 +12,5 @@ with sqlite3.connect('dec.db') as conn:
     cursor.executemany('INSERT INTO student_marks VALUES (?, ?)', sample_data)
     conn.commit()
 
-    [print(f"Student_ID: {row[0]}, Marks: {row[1]}") for row in cursor.execute('''SELECT Student_ID, marks FROM student_marks ORDER BY marks DESC''')]
+    [print(f"Student_ID: {row[0]}, Marks: {row[1]}")
+    for row in cursor.execute('''SELECT Student_ID, marks FROM student_marks ORDER BY marks DESC''')]
